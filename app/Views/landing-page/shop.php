@@ -22,7 +22,7 @@
               <div class="shop-content">
                 <?php foreach($produk[$tokoItem['id']] as $produkItem): ?>
                   <div class="product-box" id="box">
-                      <a href="">
+                      <a href="detail-produk/<?=$produkItem['id']?>">
                         <img src="<?= $produkItem['foto']?>" class="product-img">
                       </a>
                       <h2 class="product-title"><?= $produkItem['nama_produk']?></h2>

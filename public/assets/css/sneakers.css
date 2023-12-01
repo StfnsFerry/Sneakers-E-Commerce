@@ -746,7 +746,7 @@ body {
 
 /* detail-produk */
 .detail_produk {
-  height: 1000px;
+  height: 800px;
   margin-top: 150px;
 }
 
@@ -931,6 +931,72 @@ h3 {
   font-weight: 700;
 }
 
+/* checkout */
+.produk-content {
+  width: 100%;
+  height: 100vh;
+  padding: 120px 40px 40px;
+}
+
+.produk-content h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.form-pengiriman .input-box input {
+  background-color: #121212;
+  height: 50px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.order-sum .text {
+  color: #ffffff;
+}
+
+.order-sum .notes p {
+  font-size: 14px;
+  text-align: center;
+  color: #ccc;
+}
+
+.order-sum .total {
+  color: #ccc;
+}
+
+.prod-det .img {
+  width: 250px;
+  height: 250px;
+}
+
+.prod-det .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.produk-content .deliver {
+  padding: 10px 50px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: #ccc;
+  border: 1px solid #d2d2d2;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  color: #ccc;
+  font-weight: 500;
+  padding: 5px 10px;
+}
+
+.order-sum hr {
+  color: #ccc;
+}
 /* payment */
 
 #payment {

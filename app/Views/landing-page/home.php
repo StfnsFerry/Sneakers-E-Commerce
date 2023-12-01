@@ -74,7 +74,7 @@
             <?php foreach( $produk as $produk){
             ?>
             <div class="product-box" id="box_<?= $produk['id']?>">
-              <a href="">
+              <a href="/detail-produk/<?=$produk['id']?>">
                 <img
                   src="<?= $produk['foto']?>"
                   class="product-img"

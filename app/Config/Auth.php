@@ -15,7 +15,7 @@ class Auth extends \Myth\Auth\Config\Auth
      *
      * @var string
      */
-    public $defaultUserGroup;
+    public $defaultUserGroup = 'user';
 
     /**
      * --------------------------------------------------------------------
@@ -74,15 +74,14 @@ class Auth extends \Myth\Auth\Config\Auth
      * @var array
      */
     public $views = [
-        // 'login'           => 'App\Views\Auth\login',
-        // 'register'        => 'App\Views\Auth\register',
+        // 'login'           => 'Myth\Auth\Views\login',
+        // 'register'        => 'Myth\Auth\Views\register',
         'login'           => '\App\Views\Auth\login',
         'register'        => '\App\Views\Auth\register',
-        'registerSeller'  => '\App\Views\Auth\register_seller',
-        'forgot'          => 'App\Views\Auth\forgot',
-        'reset'           => 'App\Views\Auth\reset',
-        'emailForgot'     => 'App\Views\Auth\emails\forgot',
-        'emailActivation' => 'App\Views\Auth\emails\activation',
+        'forgot'          => 'Myth\Auth\Views\forgot',
+        'reset'           => 'Myth\Auth\Views\reset',
+        'emailForgot'     => 'Myth\Auth\Views\emails\forgot',
+        'emailActivation' => 'Myth\Auth\Views\emails\activation',
     ];
 
     /**
@@ -92,7 +91,7 @@ class Auth extends \Myth\Auth\Config\Auth
      *
      * @var string
      */
-    public $viewLayout = 'App\Views\Auth\layout';
+    public $viewLayout = 'Myth\Auth\Views\layout';
 
     /**
      * --------------------------------------------------------------------

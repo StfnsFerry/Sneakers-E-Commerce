@@ -93,7 +93,7 @@ class AuthController extends BaseController
             return redirect()->to(route_to('reset-password') . '?token=' . $this->auth->user()->reset_hash)->withCookies();
         }
 
-        $redirectURL = session('redirect_url') ?? site_url('/home   ');
+        $redirectURL = session('redirect_url') ?? site_url('/home');
         unset($_SESSION['redirect_url']);
 
         return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));
@@ -195,6 +195,21 @@ class AuthController extends BaseController
 
         // Success!
         return redirect()->route('login')->with('message', lang('Auth.registerSuccess'));
+    }
+
+    public function registerSeller()
+    {
+        // check if already logged in.
+        if ($this->auth->check()) {
+            return redirect()->back();
+        }
+
+        // Check if registration is allowed
+        if (! $this->config->allowRegistration) {
+            return redirect()->back()->withInput()->with('error', lang('Auth.registerDisabled'));
+        }
+
+        return $this->_render($this->config->views['registerSeller'], ['config' => $this->config]);
     }
 
     // Register as a seller
