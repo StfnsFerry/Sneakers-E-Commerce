@@ -10,10 +10,10 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Sneakers Ecommers User - Keranjang</title>
+    <title>Sneakers Ecommerce User - Pemesanan</title>
 
     <!-- Custom fonts for this template-->
-    
+        
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
@@ -38,10 +38,10 @@
     <link href="<?=base_url('assets/css/style.css')?>" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-  </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    </head>
 
   <body id="page-top">
     <!-- Page Wrapper -->
@@ -54,7 +54,7 @@
         <!-- Sidebar - Brand -->
         <a
           class="sidebar-brand d-flex align-items-center justify-content-center"
-          href="<?= base_url('/admin')?>"
+          href="<?= base_url('/user')?>"
         >
           <!-- <div class="sidebar-brand-icon">
             S
@@ -77,7 +77,7 @@
         <hr class="sidebar-divider" />
 
         <!-- Nav Item - Product -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="<?= base_url('/user/keranjang')?>">
             <i class="fas fa-solid fa-shopping-cart"></i>
             <span>Keranjang</span></a
@@ -91,7 +91,7 @@
           >
         </li>
 
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="<?= base_url('/user/pengembalian')?>">
             <i class="fas fa-arrow-left"></i>
             <span>Pengembalian</span></a
@@ -233,92 +233,52 @@
 
           <!-- Begin Page Content -->
           <div class="container-fluid">
-            <!-- Page Heading -->
-            <div
-              class="d-sm-flex align-items-center justify-content-between mb-4"
-            >
-            <h1 class="h3 mb-0 text-gray-800">Keranjang</h1>
-            </div>
             <!-- Content Row -->
             <div class="row">
              
             <div class="col-lg-12 mb-4">
             <div class="card shadow mb-4">
               <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-dark">Barang Dikeranjang</h6>
+                    <h6 class="m-0 font-weight-bold text-dark">Edit Profile</h6>
                 </div>
             <div class="card-body">
-                <div class="table-responsive">
-  <table
-        class="table table-bordered"
-        id="dataTable"
-        width="100%"
-        cellspacing="0"
-        >
-    <tr>
-      <th>No</th>
-      <th>Id Pesanan</th>
-      <th>Deskripsi</th>
-      <th>Kuantitas</th>
-      <th>Harga</th>
-      <th>Ukuran</th>
-      <th>Total</th>
-      <th>Aksi</th>
-    </tr>
-    <?php
-        $no = 1;
-        foreach ($keranjang as $k){
-        ?>
-        <tr>
-            <td><?= $no++ ?></td>
-            <td><?= $k['id'] ?></td>
-            <td><?= $k['nama_produk'] ?></td>
-            <td><?= $k['alamat'] ?></td>
-            <td><?= $k['jumlah_barang'] ?></td>
-            <td><?= $k['total_transaksi'] ?></td>
-            <td>
-              <a class="btn btn-danger" href="<?= base_url('user/pembayaran')?>">Hapus</a>
-              <colspan="2"><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Proses</button>
-            </td>
-        </tr>
-        <?php
-        }
-        ?>
-        <tr>
-            <td>2</td>
-            <td>22222</td>
-            <td>Nike</td>
-            <td>2</td>
-            <td>Rp. 180.000</td>
-            <td>40</td>
-            <td>Rp. 360.000</td>
-            <td>
-              <a class="btn btn-danger" href="<?= base_url('user/pembayaran')?>">Hapus</a>
-              <colspan="2"><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Proses</button>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>33333</td>
-            <td>Puma</td>
-            <td>2</td>
-            <td>Rp. 1.000.000</td>
-            <td>40</td>
-            <td>Rp. 2.000.000</td>
-            <td>
-              <a class="btn btn-danger" href="<?= base_url('user/pembayaran')?>">Hapus</a>
-              <colspan="2"><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Proses</button>
-            </td>
-        </tr>
-     <tr>
-       <td colspan="7"><b>TOTAL PEMBAYARAN</b></td>
-       <td colspan="2"><b>Rp. 4.360.000</b></td>
-     </tr>
-     <tr>
-       <colspan="7">Anda dapat <b>Menghapus</b> barang dalam keranjang jika ada perubahan. jika tidak ada perubahan lagi,
-       anda dapat melanjutkan <b>Pemesanan</b> dengan memilih tombol <b>Proses</b>.
-     </tr>
-  </table>
+            <div class="container mx-auto px-5 mt-1" style="margin-bottom: 100px !important;">
+                <form action="<?= base_url('/user/profile/') ?>" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="PUT">
+             <?= csrf_field() ?>
+                <div class="mb-3">
+                    <label class="col-form-label fw-bold text-dark">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" value="<?= user()->username;?>" ... >
+                </div>
+                <div class="mb-3">
+                    <label class="col-form-label fw-bold text-dark">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="fullname" name="fullname" value="<?= user()->fullname;?>">
+                </div>
+                <div class="mb-3">
+                    <label class="col-form-label fw-bold text-dark">Jenis Kelamin</label>
+                    <input type="text" class="form-control" id="jk" name="jk">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="col-form-label fw-bold text-dark">Email </label>
+                    <input type="text" class="form-control" id="email" name="email" value="<?= user()->email;?>">
+                </div>
+                 <div class="mb-3">
+                    <label class="col-form-label fw-bold text-dark">Alamat</label>
+                    <input type="text" class="form-control" id="alamat" name="alamat">
+                </div>
+                <div class="mb-3">
+                    <label class="col-form-label fw-bold text-dark">No. Handphone</label>
+                    <input type="text" class="form-control" id="no_hp" name="no_hp">
+                </div>
+                <div class="mb-3">
+                    <label for="user_image" class="col-form-label fw-bold text-dark">Foto</label>
+                    <img src="<?= user()->user_image ?>" alt="">
+                    <input type="file" class="form-control" id="user_image" name="user_image">
+                </div>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batalkan</button>
+                <button type="submit" class="btn btn-dark">Simpan</button>
+                </form>
+           </div>
   </div>
     </div>
         </div>
@@ -382,72 +342,7 @@
       </div>
     </div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Proses</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <div class="container mx-auto px-5 mt-1" style="margin-bottom: 100px !important;">
-                <div class="mb-3">
-                <form action="" method="post">
-                    <label class="col-form-label fw-bold text-dark">Deskripsi</label>
-                    <p>NIKE AIR FORCE 1           
-                      <br>Kualitas : premium import vietnam
-                      <br>Material : kulit sintetis (pu)
-                      <br>Inclued : Box - Kaos kaki - Sticker
-                    </p>
-                </div>
-                <div class="mb-3">
-                    <label class="col-form-label fw-bold text-dark">Harga</label>
-                    <p>Rp.180.000</p>
-                </div>
-                <div class="mb-3">
-                    <label class="col-form-label fw-bold text-dark">Stok</label>
-                    <p>100</p>
-                </div>
-                <div class="mb-3">
-                    <label class="col-form-label fw-bold text-dark">Alamat</label>
-                    <input type="text" class="form-control" id="size" name="size">
-                </div>
-                <div class="mb-3">
-                    <label class="col-form-label fw-bold text-dark">Pesan</label>
-                    <input type="text" class="form-control" id="qty" name="qty">
-                </div>
-                <div class="mb-3">
-                    <label class="col-form-label fw-bold text-dark">No. Handphone</label>
-                    <input type="text" class="form-control" id="qty" name="qty">
-                </div>
-                <form>
-                <div class="mb-3">
-                    <select class="form-select mb-3" aria-label="Large select example">
-                        <option selected>Jasa Pengiriman</option>
-                        <option value="Barang Tidak Sesuai">J&T</option>
-                        <option value="Barang Belum Diterima">JNE</option>
-                        <option value="Barang Rusak">Sicepat</option>
-                        <option value="Lainnya">Anteraja</option>
-                    </select>
-                </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                <button type="submit" class="btn btn-dark">Kirim</button>
-                </form>
-           </div>
-        </div>
-      </div>
-    </div> 
-  </div>
-</div>
-
     <!-- Bootstrap core JavaScript-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-
     <script src="<?=base_url('assets/vendor/jquery/jquery.min.js')?>"></script>
     <script src="<?=base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 
