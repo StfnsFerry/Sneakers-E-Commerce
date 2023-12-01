@@ -68,7 +68,7 @@
 
             ?>
               <div class="product-box" id="box">
-                <a href="">
+                <a href="/detail-produk/<?=$produk['id']?>">
                   <img src="<?= $produk['foto']?>" class="product-img">
                 </a>
                 <h2 class="product-title"><?= $produk['nama_produk']?></h2>
@@ -126,7 +126,7 @@
           <?php foreach ($item as $item){
           ?>
             <div class="product-box" id="box_<?= $item['id']?>">
-              <a href="">
+              <a href="/detail-produk/<?=$item['id']?>">
                 <img src="<?= $item['foto']?>" class="product-img">
               </a>
               <h2 class="product-title"><?= $item['nama_produk']?></h2>
@@ -137,7 +137,7 @@
             }
           ?>
           </div>     
-          <a href="">
+          <a href="/collection">
             <button type="button" class="btn btn-outline-dark collec">
               See Collections <i class="bx bx-chevron-right mb-0 ms-1"></i>
             </button>

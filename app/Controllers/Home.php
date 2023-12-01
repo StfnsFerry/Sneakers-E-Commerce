@@ -19,12 +19,28 @@ class Home extends BaseController
     
     public function index()
     {
-        $produk = $this->produkModel->getRandProduk();
 
-        $data = [
-            'produk' => $produk,
-        ];
-        return view('landing-page/home', $data);
+        if (logged_in()) {
+            if (in_groups('admin')) {
+                return redirect()->to(base_url('/admin'));
+            } else if (in_groups('seller')) {
+                return redirect()->to(base_url('/penjual'));
+            }else if (in_groups('user')) {
+                $produk = $this->produkModel->getRandProduk();
+    
+                $data = [
+                    'produk' => $produk,
+                ];
+                return view('landing-page/home', $data);
+            }
+        } else{
+            $produk = $this->produkModel->getRandProduk();
+    
+            $data = [
+                'produk' => $produk,
+            ];
+            return view('landing-page/home', $data);
+        }
     }
 
     public function newarrival()
@@ -63,6 +79,32 @@ class Home extends BaseController
         ];
 
         return view('landing-page/collection',$data);
+    }
+
+    public function detailProduk($id)
+    {
+        $produk = $this->produkModel->getAllProduk($id);
+        $item = $this->produkModel->getRandProduk();
+
+        $data = [
+            'produk' => $produk,
+            'item' => $item
+        ];
+
+        return view('landing-page/detail_produk',$data);
+    }
+
+    public function checkoutProduk($id)
+    {
+        $produk = $this->produkModel->getAllProduk($id);
+        $item = $this->produkModel->getRandProduk();
+
+        $data = [
+            'produk' => $produk,
+            'item' => $item
+        ];
+
+        return view('landing-page/checkout',$data);
     }
 
     public function login() 
