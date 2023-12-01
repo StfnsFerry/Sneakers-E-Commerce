@@ -34,11 +34,13 @@ $routes->post('/penjual/create', [PenjualController::class, 'create'], ['filter'
 $routes->put('/penjual/(:any)', [PenjualController::class, 'update'], ['filter' => 'role:seller']);
 $routes->delete('/penjual/(:any)', [PenjualController::class, 'destroy'], ['filter' => 'role:seller']);
 
-$routes->get('/user', [Pembeli::class, 'user'], ['filter' => 'role:user']);
+$routes->get('/user', [Pembeli::class, 'index'], ['filter' => 'role:user']);
 $routes->get('/user/keranjang', [Pembeli::class, 'keranjang'], ['filter' => 'role:user']);
 $routes->get('/user/pembelian', [Pembeli::class, 'pemesanan'], ['filter' => 'role:user']);
 $routes->get('/user/pengembalian', [Pembeli::class, 'pengembalian'], ['filter' => 'role:user']);
 $routes->get('/user/profile', [Pembeli::class, 'profile'], ['filter' => 'role:user']);
+$routes->get('/user/editprofile', [Pembeli::class, 'edit_profile'], ['filter' => 'role:user']);
+$routes->put('/user/profile', [Pembeli::class, 'profile'], ['filter' => 'role:user']);
 
 
 

@@ -116,7 +116,8 @@
                         <h6 class="m-0 font-weight-bold text-dark">
                            <center>PROFILE</center>
                         </h6>
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Profile</button>
+                        <!-- <button type="button" class="btn btn-dark" href="<?= base_url('user/editprofile') ?>">Edit Profile</button> -->
+                        <a href="<?= base_url('user/editprofile') ?>" class="btn btn-dark">Edit Profile</a>
                         </div>
                         <div class="row">
                 <div class="col-sm-6 profil">
@@ -135,11 +136,11 @@
                 </tr>
                 <tr>
                     <td><b>Nama Lengkap</b></td>
-                    <td> Apriansyah</td>
+                    <td> <?= user()->fullname;?></td>
                 </tr>
                 <tr>
                     <td><b>Jenis Kelamin</b></td>
-                    <td> Laki-laki</td>
+                    <td>Perempuan</td>
                 </tr>
                 <tr>
                     <td><b>Email</b></td>
@@ -147,11 +148,11 @@
                 </tr>
                 <tr>
                     <td><b>Alamat</b></td>
-                    <td> Tulang Bawang Barat</td>
+                    <td>Bandar Jaya</td>
                 </tr>
                 <tr>
                     <td><b>No. Handphone</b></td>
-                    <td> 082317758273</td>
+                    <td> 085788663227 </td>
                 </tr>
             </table>
             </div>
@@ -220,45 +221,43 @@
     </div>
 </div>
 
-    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
             </div>
             <div class="modal-body">
             <div class="container mx-auto px-5 mt-1" style="margin-bottom: 100px !important;">
+                <form action="<?= base_url('/user/profile/') ?>" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="PUT">
+             <?= csrf_field() ?>
                 <div class="mb-3">
-                <form action="" method="post">
                     <label class="col-form-label fw-bold text-dark">Username</label>
-                    <input type="text" class="form-control" id="uname" name="uname">
+                    <input type="text" class="form-control" id="username" name="username" value="<?= user()->username;?>" ... >
                 </div>
                 <div class="mb-3">
                     <label class="col-form-label fw-bold text-dark">Nama Lengkap</label>
-                    <input type="text" class="form-control" id="nama" name="nama">
-                </div>
-                <div class="mb-3">
-                    <label class="col-form-label fw-bold text-dark">Jenis Kelamin</label>
-                    <input type="text" class="form-control" id="jk" name="jenis kelamin">
+                    <input type="text" class="form-control" id="fullname" name="fullname" value="<?= user()->fullname;?>">
                 </div>
                 <div class="mb-3">
                     <label class="col-form-label fw-bold text-dark">Email</label>
-                    <input type="text" class="form-control" id="email" name="email">
+                    <input type="text" class="form-control" id="email" name="email" value="<?= user()->email;?>">
                 </div>
-                <div class="mb-3">
+                 <div class="mb-3">
                     <label class="col-form-label fw-bold text-dark">Alamat</label>
                     <input type="text" class="form-control" id="alamat" name="alamat">
                 </div>
                 <div class="mb-3">
                     <label class="col-form-label fw-bold text-dark">No. Handphone</label>
-                    <input type="text" class="form-control" id="no" name="no_hp">
-                </div>
-                <div class="mb-3">
-                    <label class="col-form-label fw-bold text-dark">Foto</label>
-                    <input type="file" class="form-control" id="foto" name="foto">
+                    <input type="text" class="form-control" id="no_hp" name="no_hp">
+                </div> -->
+                <!-- <div class="mb-3">
+                    <label for="user_image" class="col-form-label fw-bold text-dark">Foto</label>
+                    <input type="file" class="form-control" id="user_image" name="user_image" value="<?= user()->user_image;?>">
                 </div>
             </div>
             <div class="modal-footer">
@@ -270,7 +269,7 @@
       </div>
     </div> 
   </div>
-</div>
+</div> -->
 
     <!-- Bootstrap core JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
